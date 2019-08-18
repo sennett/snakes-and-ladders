@@ -1,1 +1,0 @@
-docker run -p 3000:3000 ed0ecb2699d2
