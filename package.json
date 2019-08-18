@@ -40,8 +40,7 @@
     "@fluffy-spoon/substitute": "^1.89.0",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
-    "standard": "^13.1.0",
-    "ts-mockito": "^2.4.2"
+    "standard": "^13.1.0"
   },
   "standard": {
     "parser": "@typescript-eslint/parser",
