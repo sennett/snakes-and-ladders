@@ -3,7 +3,7 @@ import { times } from 'lodash'
 import Board from './Board'
 import Substitute, { SubstituteOf } from '@fluffy-spoon/substitute'
 import IPiece from './IPiece'
-import { IBoardState } from './IBoard';
+import { IBoardState } from './IBoard'
 
 describe('Board', () => {
   let board: Board
