@@ -3,6 +3,7 @@ import { times } from 'lodash'
 import Board from './Board'
 import Substitute, { SubstituteOf } from '@fluffy-spoon/substitute'
 import IPiece from './IPiece'
+import { IBoardState } from './IBoard';
 
 describe('Board', () => {
   let board: Board
@@ -66,5 +67,17 @@ describe('Board', () => {
       board.movePiece(mockPiece, 4)
       expect(board.hasPieceAtEndState()).toBe(true)
     })
+  })
+
+  describe('exposing the board state', () => {
+    it('includes the squares + numbers', () => {
+      board.setPiece(mockPiece)
+      const boardState: IBoardState = board.getState()
+      expect(boardState.squares.length).toBe(100)
+      expect(boardState.squares[0].number).toBe(1)
+      expect(boardState.squares[99].number).toBe(100)
+      expect(boardState.squares[50].number).toBe(51)
+    })
+    it.todo('shows where the pieces are')
   })
 })

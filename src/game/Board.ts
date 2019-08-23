@@ -1,11 +1,18 @@
-import IBoard, { IPiecePosition } from './IBoard'
+import IBoard, { IPiecePosition, IBoardState } from './IBoard'
 import IPiece from './IPiece'
-import { number } from 'prop-types';
+import _ from 'lodash'
 
 const START_POSITION = 1
 const BOARD_LENGTH = 100
 
 class Board implements IBoard {
+  getState (): IBoardState {
+    let current = START_POSITION
+    return {
+      squares: _.times(BOARD_LENGTH, () => current++).map((squareNumber) => ({ number: squareNumber }))
+    }
+  }
+
   hasPieceAtEndState (): boolean {
     return this.pieces.some((piece) => piece.position === BOARD_LENGTH)
   }
